@@ -9,11 +9,14 @@ import org.springframework.context.annotation.Import;
 
 import java.util.List;
 import  org.junit.jupiter.api.*;
+import org.springframework.test.context.ActiveProfiles;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 @DataJdbcTest
 @Import(EmployeeRepository.class)
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
+@ActiveProfiles("test")
 public class EmployeeRepoTesting {
     @Autowired
     EmployeeRepository repository;
